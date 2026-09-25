@@ -45,6 +45,10 @@ class MoverNode(Node):
             msg.linear.x = 0.5 # Kecepatan linear (m/s)
             msg.angular.z = 0.0  
             self.get_logger().info('Gerak Maju 3s')
+        elif elapsed_time < 24.0:
+            msg.linear.x = 0.0
+            msg.angular.z = -0.5236  # Kecepatan rotasi (rad/s)
+            self.get_logger().info('Rotasi Kanan 90 Derajat')
         else:
             msg.linear.x = 0.0
             msg.angular.z = 0.0
